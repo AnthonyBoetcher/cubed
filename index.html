@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <nav><img id="logo" src="cubed_white_word.png"><a href="#about"><div>ABOUT</div></a><a href="#science-ystuff"><div>SCIENCE-Y STUFF</div></a><a href="#progress"><div>PROGRESS</div></a></nav>
+        <nav id="navbar"><img id="logo" src="cubed_white_word.png"><a href="#about"><div>ABOUT</div></a><a href="#science-ystuff"><div>SCIENCE-Y STUFF</div></a><a href="#GALLERY"><div>PROGRESS</div></a><a href="#gallery"><div>GALLERY</div></a></nav>
         <main>
            <div id="about">
               <p><b>ABOUT</b><br><br>19/07/22&nbsp;&nbsp;Welcome to Cubed!&nbsp;Cubed is a personal project of mine to discover eco-friendly alternatives to common building materials!<span id="dots">...</span><span id="more"><br><br>Ever ask yourself: Why don't we use 'insert material name here' to manufacture 'insert construction item/unit/component name here'?
@@ -34,7 +34,6 @@
               shifting of mechanical properties in these 'green' counterparts, and this shift is not necessarily for the best! The roles of these aggregates certainly needs to be investigated further, but from my brief understanding it is the action of retraint, dimensional stability and interlocking that is sought after from aggregates.</span></p>
               <button onclick="myFunction1()" id="myBtn1">Read more</button>
            </div>
-           
            <div id="progress">
               <p><b>PROGRESS</b><br><br>20/07/2022&nbsp;&nbsp;The current short term plan is to conduct research whilst developing a concept for a reusable mould.<span id="dots2">...</span><span id="more2"><br><br>Having previously worked with cement mortar pots I know how important a mould it. Why? Well the first challenge is creating a mould that is exactly to specification, has physical integrity to contain the cement mixture without leak or rupture whilst allowing convenient release and repetitive use.<br><br>
               SO my first instinct is to 1) take a cement mortar block, 2) wrap it in cling wrap (I know, just hear me out), 3) build a timber frame that encloses the blocks faces and base, 4) fix steel anchors to the inside face of the timber frame (visible due to cement block voids), 5) fix steel handles to the outside of the timber frame, 6) Thoroughly oil the cling-wrapped blocks inner faces and timber base, and finally 7) cast cement mortar (perhaps concrete rather... to be discussed) inside the 
@@ -42,21 +41,41 @@
           supposedly produced by our negative space cement mortar, may not want to remain in place in the timber frame. I suspect, even with steel anchors, there will be issues with integrity at this interface. SO the alternative, upon failure, is to scrap the entire 'cast something in the void to create a mould' and instead just make a bloody timber negative space.</span></p>
               <button onclick="myFunction2()" id="myBtn2">Read more</button>
            </div>
+
+           <div id="gallery">
+            <p><b>GALLERY</b><br><br></span><span id="dots3">...</span><span id="more3"></span></p>
+            <button onclick="myFunction3()" id="myBtn3">Read more</button>
+         </div>
         </main>
-        <footer></footer>
+        <footer>&copy;Anthony Boetcher for Cubed 2022</footer>
     </body>
 </html>
 <style>
+  footer {
+          width: 200px;
+           height: 40px;
+           border: none;
+           color: white;
+           opacity: 1;
+           margin: 10px 0px 0 0;
+           font-family: 'MuseoModerno', cursive;
+           font-weight: 200;
+           font-size: 10px;
+           display: flex;
+           text-align: center;   
+           align-content: center;      
+  }
   #logo {
     height: 100px;
     width: 100px;
+    margin: 10px -15px 0 0;
   }
 a{text-decoration: none}
 a:visited{text-decoration: none}
-#about p, #science-ystuff p, #progress p{
+#about p, #science-ystuff p, #progress p, #gallery p{
     margin: 20px 20px 0 20px;
 }
-#myBtn , #myBtn1, #myBtn2{
+#myBtn , #myBtn1, #myBtn2, #myBtn3{
     margin: 5px 0 0 20px;
     background-image: linear-gradient(rgb(224, 209, 169),rgb(109, 34, 109));
     color: black;
@@ -68,8 +87,9 @@ a:visited{text-decoration: none}
 #myBtn:hover , #myBtn1:hover, #myBtn2:hover{
   cursor: pointer;
 }
-    #more, #more1, #more2 {display: none;}
-#about, #science-ystuff, #progress{
+    #more, #more1, #more2, #more3 {display: none;}
+
+#about, #science-ystuff, #progress, #gallery {
         width: 90vw; 
         height: fit-content; 
         border: 1px solid white;
@@ -78,19 +98,19 @@ a:visited{text-decoration: none}
         padding: 0 0 10px 0;
     }
     nav div {
-           width: 200px;
+           width: 150px;
            flex-shrink: 1;
            height: 40px;
            border: none;
-           background-color: rgba(0, 0, 0, 0.8);
            color: white;
-           -webkit-text-stroke: 1px rgb(109, 34, 109);
+           -webkit-text-stroke: 1px black;
            opacity: 1;
-           margin: 20px 0px 0 0;
+           margin: 40px 0 0 0;
            font-family: 'MuseoModerno', cursive;
            font-weight: 700;
-           font-size: 22px;
-           text-align: center;           
+           font-size: 2.25vh;
+           text-align: center;   
+           align-content: center;     
     }
     nav div:hover {
         cursor: pointer;
@@ -98,12 +118,14 @@ a:visited{text-decoration: none}
     nav{
         background-color: transparent;
         width: 100vw;
-        height: 60px;
-        position: fixed; 
+        height: 120px;
+        position: fixed;
+        top: 0;
         display: flex; 
         flex-direction: row; 
         justify-content: center;
-        align-content: center;
+        transition: top 0.5s;
+        background-color: rgba(133, 42, 133, 0.3);
     }
  body {
     background-color: black;
@@ -111,24 +133,17 @@ a:visited{text-decoration: none}
  }
  main {
     display: inline-block;
-    margin: 80px 0 0 0;
+    margin: 90px 0 0 0;
  }
-/* width */
 ::-webkit-scrollbar {
   width: 20px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -181,4 +196,14 @@ a:visited{text-decoration: none}
         moreText.style.display = "inline";
       }
     }
+    var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0px";
+  } else {
+    document.getElementById("navbar").style.top = "-130px";
+  }
+  prevScrollpos = currentScrollPos;
+}
     </script>
