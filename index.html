@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     </head>
     <body>
-        <nav><img src="cubed icon.png"><a href="#about"><div>ABOUT</div></a><a href="#science-ystuff"><div>SCIENCE-Y STUFF</div></a><a href="#progress"><div>PROGRESS</div></a></nav>
+        <nav><img id="logo" src="cubed_white_word.png"><a href="#about"><div>ABOUT</div></a><a href="#science-ystuff"><div>SCIENCE-Y STUFF</div></a><a href="#progress"><div>PROGRESS</div></a></nav>
         <main>
            <div id="about">
               <p><b>ABOUT</b><br><br>19/07/22&nbsp;&nbsp;Welcome to Cubed!&nbsp;Cubed is a personal project of mine to discover eco-friendly alternatives to common building materials!<span id="dots">...</span><span id="more"><br><br>Ever ask yourself: Why don't we use 'insert material name here' to manufacture 'insert construction item/unit/component name here'?
@@ -47,6 +47,10 @@
     </body>
 </html>
 <style>
+  #logo {
+    height: 100px;
+    width: 100px;
+  }
 a{text-decoration: none}
 a:visited{text-decoration: none}
 #about p, #science-ystuff p, #progress p{
@@ -55,12 +59,15 @@ a:visited{text-decoration: none}
 #myBtn , #myBtn1, #myBtn2{
     margin: 5px 0 0 20px;
 }
+#myBtn:hover , #myBtn1:hover, #myBtn2:hover{
+  cursor: pointer;
+}
     #more, #more1, #more2 {display: none;}
 #about, #science-ystuff, #progress{
         width: 90vw; 
         height: fit-content; 
         border: 1px solid white;
-        margin: 80px 5vw 0 4vw;
+        margin: 30px 5vw 0 4vw;
         color: white;
         padding: 0 0 10px 0;
     }
@@ -69,10 +76,9 @@ a:visited{text-decoration: none}
            flex-shrink: 1;
            height: 40px;
            border: none;
-           background-color: rgba(0, 0, 0, 0.507);
+           background-color: rgba(0, 0, 0, 0.8);
            color: white;
            opacity: 1;
-           box-shadow: 0 0 2px 2px black;
            margin: 20px 0px 0 0;
            font-family: 'MuseoModerno', cursive;
            font-weight: 700;
@@ -98,6 +104,7 @@ a:visited{text-decoration: none}
  }
  main {
     display: inline-block;
+    margin: 80px 0 0 0;
  }
 /* width */
 ::-webkit-scrollbar {
